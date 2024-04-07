@@ -29,8 +29,8 @@ inputs:
     required: false
     default: ''
 outputs:
-  status:
-    description: 'The status of the pipeline.'
+  # status:
+  #   description: 'The status of the pipeline.'
   web_url:
     description: 'The URL of the pipeline.'
 runs:

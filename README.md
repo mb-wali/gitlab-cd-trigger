@@ -3,7 +3,7 @@
 Github Action to trigger Gitlab CD pipeline
 
 [GitHub](https://github.com/mb-wali/gitlab-cd-trigger) |
-[GitHub Marketplace](https://github.com/marketplace/actions/gitlab-cd-trigger)
+[GitHub Marketplace](https://github.com/marketplace/actions/trigger-gitlab-pipeline)
 
 [![Test action](https://github.com/mb-wali/gitlab-cd-trigger/actions/workflows/test.yml/badge.svg)](https://github.com/mb-wali/gitlab-cd-trigger/actions/workflows/test.yml)
 
@@ -33,24 +33,11 @@ You will find the *Project ID* in the *General Settings* of your GitLab project.
 **Required** The [GitLab pipeline trigger token](https://docs.gitlab.com/ee/ci/triggers/index.html#create-a-trigger-token)
 to trigger the pipeline.
 
-### `ACCESS_TOKEN`
-
-The [GitLab pipeline access token](https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html)
-to access the pipeline via the API. You need the `read_api` and `read_repository` scopes with `Guest` role for this token.
-
-For public projects you don't need to provide an access token.
-
-
 ### `PIPELINE_VARIABLES`
 
 A map of key-valued strings containing the pipeline variables. For example: `{ VAR1: "value1", VAR2: "value2" }`.. Default `"World"`.
 
 ## Outputs
-
-### `status`
-
-The last status of the pipeline. See [GitLab project pipelines](https://docs.gitlab.com/ee/api/pipelines.html#list-project-pipelines)
-for more information about which status values there are.
 
 ### `web_url`
 
