@@ -1,19 +1,31 @@
 name: 'Trigger GitLab Pipeline'
 description: 'Triggers a GitLab Pipeline'
 author: "mbwali"
+branding:
+  icon: 'git-commit'
+  color: 'orange'
 inputs:
   PROJECT_ID:
     description: 'The ID of the GitLab project'
     required: true
+    default: ''
   GITLB_TRIGGER_TOKEN:
     description: 'The GitLab Trigger Token'
     required: true
+    default: ''
   REF_NAME:
     description: 'The GitLab branch or tag name'
     required: true
+    default: ''
   URL:
     description: 'The GitLab URL'
-    required: true
+    required: false
+    default: 'gitlab.com'
+outputs:
+  status:
+    description: 'The status of the pipeline.'
+  web_url:
+    description: 'The URL of the pipeline.'
 runs:
   using: 'node18'
-  main: 'index.js'
+  main: 'dist/index.js'
