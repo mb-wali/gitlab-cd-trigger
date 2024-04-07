@@ -26,7 +26,7 @@ You will find the *Project ID* in the *General Settings* of your GitLab project.
 
 ### `REF_NAME`
 
-**Required** The branch or tag to run the pipeline on.
+The branch or tag to run the pipeline on. Default `main`.
 
 ### `GITLB_TRIGGER_TOKEN`
 
