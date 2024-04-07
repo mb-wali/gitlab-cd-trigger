@@ -24,13 +24,13 @@ inputs:
   PIPELINE_VARIABLES:
     description: 'A map of key-valued strings containing the pipeline variables. For example: { VAR1: "value1", VAR2: "value2" }.'
     required: false
-  # access_token:
-  #   description: 'Pipeline Access Token, see https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html'
-  #   required: false
-  #   default: ''
+  ACCESS_TOKEN:
+    description: 'Pipeline Access Token, see https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html'
+    required: false
+    default: ''
 outputs:
-  # status:
-  #   description: 'The status of the pipeline.'
+  status:
+    description: 'The status of the pipeline.'
   web_url:
     description: 'The URL of the pipeline.'
 runs:

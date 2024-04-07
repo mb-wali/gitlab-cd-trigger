@@ -26880,9 +26880,10 @@ async function run() {
     const host = encodeURIComponent(core.getInput('URL'));
     const projectId = encodeURIComponent(core.getInput('PROJECT_ID'));
     const triggerToken = core.getInput('GITLB_TRIGGER_TOKEN');
-    // const accessToken = core.getInput('access_token');
+    const accessToken = core.getInput('ACCESS_TOKEN');
     const ref = core.getInput('REF_NAME');
-    const variables = JSON.parse(core.getInput('PIPELINE_VARIABLES'));
+    const input = core.getInput('PIPELINE_VARIABLES');
+    const variables = input ? JSON.parse(input) : null;
 
     console.log(`Triggering pipeline ${projectId} with ref ${ref} on ${host}!`);
 
