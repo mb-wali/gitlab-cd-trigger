@@ -5,7 +5,7 @@ Github Action to trigger Gitlab CD pipeline
 [GitHub](https://github.com/mb-wali/gitlab-cd-trigger) |
 [GitHub Marketplace](https://github.com/marketplace/actions/gitlab-cd-trigger)
 
-[![Test action](https://github.com/mb-wali/gitlab-cd-trigger/actions/workflows/main.yml/badge.svg)](https://github.com/mb-wali/gitlab-cd-trigger/actions/workflows/main.yml)
+[![Test action](https://github.com/mb-wali/gitlab-cd-trigger/actions/workflows/main.yml/badge.svg)](https://github.com/mb-wali/gitlab-cd-trigger/actions/workflows/test.yml)
 
 This GitHub action triggers and waits for a [GitLab pipeline](https://docs.gitlab.com/ee/ci/pipelines/) to complete.
 
@@ -47,7 +47,7 @@ The URL of the pipeline, for example `https://gitlab.com/foo/bar/pipelines/47`.
 ## Example usage
 
 ```yaml
-uses: digital-blueprint/gitlab-pipeline-trigger-action@v1
+uses: mb-wali/gitlab-cd-trigger@v1@v1
 with:
   URL: 'gitlab.example.com'
   GITLB_TRIGGER_TOKEN: ${{ secrets.DEPLOY_TRIGGER_TOKEN }}
@@ -55,6 +55,3 @@ with:
   REF_NAME: 'main'
   PIPELINE_VARIABLES: '{"VAR1":"value1","VAR2":"value2"}'
 ```
-
-https://github.com/digital-blueprint/gitlab-pipeline-trigger-action
-https://www.youtube.com/watch?v=N26xgQ7kLKo
