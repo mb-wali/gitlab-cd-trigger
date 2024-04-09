@@ -2,6 +2,8 @@
 
 Github Action to trigger Gitlab CD pipeline
 
+Credit to [digital-blueprint](https://github.com/digital-blueprint/gitlab-pipeline-trigger-action), This clone is adapted to my usecase.
+
 [GitHub](https://github.com/mb-wali/gitlab-cd-trigger) |
 [GitHub Marketplace](https://github.com/marketplace/actions/trigger-gitlab-pipeline)
 
