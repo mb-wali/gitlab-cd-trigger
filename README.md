@@ -48,7 +48,7 @@ The URL of the pipeline, for example `https://gitlab.com/foo/bar/pipelines/47`.
 ## Example usage
 
 ```yaml
-uses: mb-wali/gitlab-cd-trigger@v1.0.0
+uses: mb-wali/gitlab-cd-trigger@main
 with:
   URL: 'gitlab.example.com'
   GITLB_TRIGGER_TOKEN: ${{ secrets.DEPLOY_TRIGGER_TOKEN }}
