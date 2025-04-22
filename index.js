@@ -111,7 +111,7 @@ async function run() {
         console.log(`Pipeline id ${data.id} triggered! See ${data.web_url} for details.`);
 
         // poll pipeline status
-        await pollPipeline(host, projectId, accessToken, data.id, data.web_url);
+        await pollPipeline(host, projectId, triggerToken, data.id, data.web_url);
     } catch (error) {
         core.setFailed(error.message);
     }
