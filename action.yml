@@ -13,6 +13,10 @@ inputs:
     description: 'The GitLab Trigger Token'
     required: true
     default: ''
+  ACCESS_TOKEN:
+    description: 'The GitLab Access Token with read_api scope'
+    required: false
+    default: ''
   REF_NAME:
     description: 'The GitLab branch or tag name'
     required: false
@@ -24,10 +28,6 @@ inputs:
   PIPELINE_VARIABLES:
     description: 'A map of key-valued strings containing the pipeline variables. For example: { VAR1: "value1", VAR2: "value2" }.'
     required: false
-  ACCESS_TOKEN:
-    description: 'Pipeline Access Token, see https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html'
-    required: false
-    default: ''
 outputs:
   # status:
   #   description: 'The status of the pipeline.'

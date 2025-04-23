@@ -35,6 +35,30 @@ The branch or tag to run the pipeline on. Default `main`.
 **Required** The [GitLab pipeline trigger token](https://docs.gitlab.com/ee/ci/triggers/index.html#create-a-trigger-token)
 to trigger the pipeline.
 
+### `ACCESS_TOKEN` (optional)
+
+An optional [GitLab access token](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html) used to **retrieve pipeline status via the GitLab API**.
+
+If you want to **poll your pipeline and get its status** (e.g. `pending`, `running`, `success`, `failed`) after triggering it, you'll need to provide a valid **Personal Access Token**, **Project Access Token**, or **CI Job Token** with the `read_api` scope.
+
+If not provided, the pipeline will still be triggered, but its status will **not be tracked**.
+
+> 💡 **Need help generating a token?**  
+> See: [Creating a Personal Access Token](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html)
+
+---
+
+### 🔐 Why use a separate token?
+
+To **trigger a pipeline**, a token must have the `api` scope. This scope grants **full access to the GitLab API**, including write actions like modifying repository files, managing CI/CD settings, and more.
+
+For security reasons, it's best **not to reuse the same token** for both triggering and polling the pipeline. By using a **dedicated token with only the `read_api` scope** for polling status, you:
+- **Limit exposure** of elevated permissions,
+- Follow the principle of **least privilege**,
+- Reduce the risk in case the token is accidentally leaked.
+
+Use separate tokens for triggering and polling when possible to ensure a more secure setup.
+
 ### `PIPELINE_VARIABLES`
 
 A map of key-valued strings containing the pipeline variables. For example: `{ VAR1: "value1", VAR2: "value2" }`.. Default `"World"`.
@@ -52,7 +76,15 @@ uses: mb-wali/gitlab-cd-trigger@main
 with:
   URL: 'gitlab.example.com'
   GITLB_TRIGGER_TOKEN: ${{ secrets.DEPLOY_TRIGGER_TOKEN }}
+  ACCESS_TOKEN: ${{ secrets.GITLAB_PROJECT_ACCESS_TOKEN }}
   PROJECT_ID: '123'
   REF_NAME: 'main'
   PIPELINE_VARIABLES: '{"VAR1":"value1","VAR2":"value2"}'
+```
+
+## Development
+
+```bash
+npm install
+npm run build
 ```

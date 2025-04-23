@@ -26918,14 +26918,18 @@ async function run() {
         core.setOutput("web_url", data.web_url);
         console.log(`Pipeline id ${data.id} triggered! See ${data.web_url} for details.`);
 
-        // // poll pipeline status
-        // await pollPipeline(host, projectId, accessToken, data.id, data.web_url);
+        if (accessToken?.trim()) {
+            await pollPipeline(host, projectId, accessToken, data.id, data.web_url);
+        } else {
+            console.log('No access token provided — skipping pipeline polling.');
+        }
     } catch (error) {
         core.setFailed(error.message);
     }
 }
 
 run()
+
 })();
 
 module.exports = __webpack_exports__;
